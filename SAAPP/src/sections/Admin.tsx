@@ -12,6 +12,7 @@ export function Admin() {
         <h1>admin</h1>
         <h2>Bienvenido: {user}</h2>
         <Button onClick={() => logout()}>Salir</Button>
+        
         </>
     )
 }
