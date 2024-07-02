@@ -1,0 +1,24 @@
+.studentSection form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 300px;
+
+    > div {
+        display: flex;
+        gap: 15px;
+    }
+}
+
+.cursoSection form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 300px;
+
+    > div {
+        display: flex;
+        gap: 15px;
+    }
+
+}
