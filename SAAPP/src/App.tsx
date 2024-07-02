@@ -5,11 +5,12 @@ import { Admin } from './sections/Admin'
 import { ProtectedRouter } from './components/ProtectedRouter'
 import { useEffect } from 'react'
 import { useLoginStore } from './store/useLoginStore'
+import Dashboard from './sections/Dashboard'
 
 function App() {
   const { login } = useLoginStore();
   const navigate = useNavigate();
-  
+
   useEffect(() => {
     const user = window.localStorage.getItem("user_token");
     if (user) {
@@ -20,17 +21,19 @@ function App() {
 
   return (
     <>
-    <h1>ESCUELA DE MÚSICA DANONINO</h1>
-    <Routes>
-      <Route path="/" element={<SignIn/>}/>
-      <Route element={<ProtectedRouter/>}>
-      <Route path="/admin" element={<Admin/>}/>
-      <Route path="/other" element={<h1>Otra página</h1>}/>
-      </Route>
-    </Routes>
-      
+
+      <Routes>
+        <Route path="/" element={<SignIn />} />
+        <Route element={<ProtectedRouter />}>
+          <Route path="/admin/*" element={<Dashboard />} />
+         
+        </Route>
+      </Routes>
+
     </>
   );
 }
 
 export default App
+
+

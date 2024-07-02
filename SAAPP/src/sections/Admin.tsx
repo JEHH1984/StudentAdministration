@@ -1,6 +1,7 @@
 import { Navigate } from "react-router-dom"
 import { useLoginStore } from "../store/useLoginStore";
 import { Button } from "@mui/material";
+import Dashboard from "./Dashboard";
 
 export function Admin() {
     
@@ -9,10 +10,9 @@ export function Admin() {
 
     return (
         <>
-        <h1>admin</h1>
-        <h2>Bienvenido: {user}</h2>
+        <Dashboard/>
         <Button onClick={() => logout()}>Salir</Button>
-        
+
         </>
     )
 }
